@@ -114,8 +114,8 @@ public class VideoCastControllerActivity extends ActionBarActivity {
                 // need to start remote playback
                 mPlaybackState = MediaStatus.PLAYER_STATE_BUFFERING;
                 updatePlayButton(mPlaybackState);
-                mediaWrapper.getInt("startPoint", 0);
-                mCastManager.loadMedia(mSelectedMedia, true, mediaWrapper.getInt("startPoint", 0));
+                
+                mCastManager.loadMedia(mSelectedMedia, true, extras.getInt("startPoint", 0));
             } else {
                 // we don't change the status of remote playback
                 if (mCastManager.isRemoteMoviePlaying()) {
